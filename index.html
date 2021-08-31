@@ -17,20 +17,20 @@
                 <div class="form-control">
                     <input
                             type="text"
-                            v-bind:placeholder="myPlaceholder"
-                            v-bind:value="inputValue"
-                            v-on:input="inputChangeHandler"
-                            v-on:keypress.enter="addNewNote"
+                            :placeholder="myPlaceholder"
+                            :value="inputValue"
+                            @input="inputChangeHandler"
+                            @keypress.enter="addNewNote"
 
                     />
                 </div>
             </div>
-            <button class="btn" v-on:click="addNewNote">Добавить</button>
+            <button class="btn" @click="addNewNote">Добавить</button>
             <hr/>
             <ul class="list">
                 <li class="list-item" v-for="(myNote, index) in notes">
                     {{toUpperCase(myNote)}}
-                    <button class="btn danger" v-on:click="removeNote(index, $event)">Удалить</button>
+                    <button class="btn danger" @click="removeNote(index, $event)">Удалить</button>
                 </li>
             </ul>
         </div>
