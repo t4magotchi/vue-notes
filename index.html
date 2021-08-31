@@ -28,8 +28,9 @@
             <button class="btn" v-on:click="addNewNote">Добавить</button>
             <hr/>
             <ul class="list">
-                <li class="list-item" v-for="myNote in notes">
+                <li class="list-item" v-for="(myNote, index) in notes">
                     {{myNote}}
+                    <button class="btn danger" v-on:click="removeNote(index, $event)">Удалить</button>
                 </li>
             </ul>
         </div>

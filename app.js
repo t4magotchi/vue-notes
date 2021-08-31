@@ -14,9 +14,12 @@ const App = {
         addNewNote(){
             this.notes.push(this.inputValue)
             this.inputValue = ''
+        },
+        removeNote(index, event){
+            this.notes.splice(index, 1)
         }
 
     }
-}git
+}
 
 Vue.createApp(App).mount("#app")
